@@ -134,6 +134,10 @@ function page2NextKiKi(){
         document.getElementById("page2Next").style.display = "none"
         document.getElementById("page2NextKiKi").style.display = "none"
         document.getElementById("page2NextKiAra").style.display = "none"
+        console.log("გაქვს გადატანილი Covid-19?*: კი")
+        console.log("ანტისხეულების ტესტი გაქვს გაკეთებული?*: კი")
+        console.log("ტესტის მიახლოებითი რიცხვი: " + dateInput.value)
+        console.log("ანტისხეულების რაოდენობა: " + numberInput.value)
     }
 }
 function page2NextKiAra(){
@@ -153,6 +157,9 @@ function page2NextKiAra(){
         document.getElementById("page2Next").style.display = "none"
         document.getElementById("page2NextKiKi").style.display = "none"
         document.getElementById("page2NextKiAra").style.display = "none"
+        console.log("გაქვს გადატანილი Covid-19?*: კი")
+        console.log("ანტისხეულების ტესტი გაქვს გაკეთებული?*: არა")
+        console.log("Covid-19-ის გადატანის მიახლოებითი რიცხვი: " + dateInput2.value)
     }
 }
 
