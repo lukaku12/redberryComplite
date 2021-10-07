@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body id="colorChange">
+    <div id="intro">
+        <div class="carousel-inner"> 
+            <div class="item black" style="animation-play-state: running;"> 
+            </div>
+        </div>
+        <div class="text">
+            <span>
+                <button id="button1" class="button1" onclick="button1()">
+                    <p class="buttonText">
+                        <i>
+                            კითხვარის <br> დაწყება
+                        </i>
+                    </p>
+                </button>
+            </span>
+        </div>          
+    </div>
+    <header id="header">
+        <img class="logo" src="./firstPageLogo.png" alt="REDBERRY">
+        <div class="rightHeader">
+            <h2 id="pageNumber">1/4</h2>
+        </div>
+    </header>
+    <hr id="headerSplit" class="headerSplit">
+    <div id="motherBody">
+        <div id="leftBody">
+            <div id="kitxvari">
+                <label for="saxeli"><h3>სახელი*</h3></label>
+                <input class="kitxvebi" type="text" id="saxeli" placeholder="ლუკა"><br>
+                <small id="error"></small><br>
+                <label  for="gvari"><h3>გვარი*</h3></label>
+                <input class="kitxvebi" type="text" id="gvari" placeholder="ქურდაძე"><br>
+                <small id="error1"></small><br>
+                <label for="maili"><h3>მეილი*</h3></label>
+                <input class="kitxvebi" type="email" id="maili" placeholder="yourname@redberry.ge"><br>
+                <small id="error2"></small><br>
+                <h5 class="gaftxileba">
+                    <hr class="footerSplit"><br>
+                    *-ით მონიშნული ველების შევსება <br> სავალდებულოა
+                </h5>
+            </div>
+        </div>
+        <div id="rightBody">
+            <img id="square" src="./mainLogo.png" alt="Square">
+            <img src="./pirveligverdi.png" alt="qali-kaci" class="pageImage">
+            <!--<h1>pirveli GVERDI</h1>-->
+        </div>
+        <div id="leftBody2">  
+            <div id="kitxvari2">
+                <div id="firstStage" class="checkbox">
+                    <label for="monishvna"><h3>გაქვს გადატანილი Covid-19?*</h3></label><br>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" value="კი" onclick="gadataniliGaqvs(0)">კი<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" value="არა" onclick="gadataniliGaqvs(1)">არა<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" value="ახლა მაქვს" onclick="gadataniliGaqvs(2)">ახლა მაქვს<span class="checkmark"></span></label><br>
+                </div>
+                <div id="secondStage" class="checkbox">
+                    <label><h3>ანტისხეულების ტესტი გაქვს გაკეთებული?*</h3></label><br>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="checkAnti(0)">კი<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="checkAnti(1)">არა<span class="checkmark"></span></label><br><br>
+                </div>
+                <div id="thirdStage" class="checkbox">
+                    <label><h3>თუ გახსოვს, გთხოვ მიუთითე ტესტის <br> მიახლოებითი რიცხვი <br> და ანტისხეულების რაოდენობა*</h3></label>
+                    <input class="kitxvebi" id="dateInput" type="text" placeholder="ტესტის მიახლოებითი რიცხვი">
+                    <input class="kitxvebi" id="numberInput" type="text" placeholder="ანტისხეულების რაოდენობა"><br>
+                    <small id="error11"></small>
+                </div>
+                <div id="fourthStage">
+                    <label><h3>მიუთითე მიახლოებითი პერიოდი როდის <br> გქონდა Covid-19*</h3></label>
+                    <input class="kitxvebi" type="text" id="dateInput2" placeholder="Covid-19-ის მიახლოებითი რიცხვი"><br>
+                    <small id="error13"></small>
+                </div>
+                
+            </div>
+        </div>
+        <div id="rightBody2">
+            <img id="circle" class="red-ball" src="./circle.png" alt="Square">
+            <img src="./vaccinate2.png" alt="kaci" class="pageImage">
+            <!--<h1>meore GVERDI</h1>-->
+        </div>
+        <div id="leftBody3">  
+            <div id="kitxvari3">
+                <div id="firstStage2" class="checkbox">
+                    <label for="monishvna"><h3>უკვე აცრილი ხარ?*</h3></label><br>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" value="კი" onclick="acriliXar(0)">კი<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" value="არა" onclick="acriliXar(1)">არა<span class="checkmark"></span></label>
+                </div>
+                <div id="secondStage2" class="checkbox">
+                    <label><h3>აირჩიე რა ეტაპზე ხარ*</h3></label><br>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raEtapze(0)">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raEtapze(1)">სრულად აცრილი ვარ<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raEtapze(2)">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე<span class="checkmark"></span></label><br>
+                </div>
+                <div id="romArGadado">
+                    <h4>რომ არ გადადო,<br> ბარემ ახლავე დარეგისტრირდი
+                        <a href="https://booking.moh.gov.ge/">https://booking.moh.gov.ge/</a>
+                    </h4>
+                </div>
+                <div id="thirdStage2" class="checkbox">
+                    <label for="monishvna"><h3>რას ელოდები?*</h3></label><br>
+                    <label class="container"><input class="monishvna" type="radio" name="group[3]" value="კი" onclick="rasElodebi(0)">დარეგისტრირებული ვარ და ველოდები რიცხვს<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[3]" value="არა" onclick="rasElodebi(1)">არ ვგეგმავ<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[3]" value="არა" onclick="rasElodebi(2)">გადატანილი მაქვს და ვგეგმავ აცრას<span class="checkmark"></span></label><br>
+                </div>
+                <div id="justLink">
+                    <h4>
+                        <a href="https://booking.moh.gov.ge/">
+                            👉 https://booking.moh.gov.ge/
+                        </a>
+                    </h4>
+                </div>
+                <div id="linkWithText">
+                    <h4>
+                        ახალი პროტოკოლით კოვიდის გადატანიდან 1 <br> თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.<br><br> 👉 რეგისტრაციის ბმული
+                        <a href="https://booking.moh.gov.ge/">
+                            https://booking.moh.gov.ge/
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div id="rightBody3">
+            <img id="star" class="star" src="./star.png" alt="star">
+            <img src="./doctor2.png" alt="doctor" class="pageImage">
+            <!--<h1>MESAME GVERDI</h1>-->
+        </div>
+        <div id="leftBody4">
+            <div id="kitxvari4">
+                <div>
+                    <h4>რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი
+                        თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის. 
+                        
+                        პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა. 
+                    </h4><br>
+                </div>
+                <h4>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*</h4><br>
+                <div class="checkbox">
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" onclick="raSixshirit(0)">კვირაში ორჯერ<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" onclick="raSixshirit(1)">კვირაში ერთხელ<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" onclick="raSixshirit(2)">ორ კვირაში ერთხელ<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[1]" onclick="raSixshirit(3)">თვეში ერთხელ<span class="checkmark"></span></label><br>
+                </div>
+                <h4>კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</h4><br>
+                <div class="checkbox">
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(0)">0<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(1)">1<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(2)">2<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(3)">3<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(4)">4<span class="checkmark"></span></label>
+                    <label class="container"><input class="monishvna" type="radio" name="group[2]" onclick="raSixshirit2(5)">5<span class="checkmark"></span></label><br>
+                </div>
+                <div>
+                    <h4>
+                        რას ფიქრობ ფიზიკურ შეკრებებზე?
+                    </h4><br>
+                    <textarea class="textArea"></textarea>
+                </div>
+                <div><br>
+                    <h4>
+                        რას ფიქრობ არსებულ გარემოზე: <br>რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?
+                    </h4><br>
+                    <textarea class="textArea"></textarea><br>
+                </div>
+                <small id="error15">*-ით მონიშნული ველები უნდა შეავსო</small><br>
+                <button id="pageChange4" onclick="changeButton4()"><img src="./madloba.png" class="madloba"></button>
+            </div> 
+        </div>
+        <div id="rightBody4">
+            <img id="heart" class="heart" src="./heart.png" alt="heart">
+            <img src="./bike2.png" alt="bike" class="pageImage">
+            <!--<h1>meotxe GVERDI</h1>-->
+        </div>
+        <div id="lastPage">
+            <div class="coco">
+                <span class="text1"><i>მადლობა</i></span>
+            </div>
+        </div>
+
+
+
+    </div>
+    
+    <footer id="footer">
+        <div class="pageChangers">
+            <!--პირველი გვერდი-->
+            <button id="page1Next" onclick="test()"><img src="./Vector8.png" alt=""></button>
+            <!--მეორე გვერდი-->
+            <button id="page2Last" onclick="page2Last()"><img src="./Vector3.png" alt=""></button>
+            <button id="page2Next" onclick="page2Next()"><img src="./Vector8.png" alt=""></button>
+            <!--TEST FOR SECOND PAGE-->
+            <button id="page2NextKiKi" onclick="page2NextKiKi()"><img src="./Vector8.png" alt=""></button>
+            <button id="page2NextKiAra" onclick="page2NextKiAra()"><img src="./Vector8.png" alt=""></button>
+            <!--მესამე გვერდი-->
+            <button id="page3Last" onclick="page3Last()"><img src="./Vector3.png" alt=""></button>
+            <button id="page3Next" onclick="page3Next()"><img src="./Vector8.png" alt=""></button>
+            <!--მეოთხე გვერდი-->
+            <button id="page4Last" onclick="page4Last()"><img src="./Vector3.png" alt=""></button>
+    </footer>
+
+    <script src="./style.js"></script>
+</body>
+</html>
